@@ -278,7 +278,7 @@ export class Ng2DatetimePickerComponent implements AfterViewInit {
     dt.setMilliseconds(0);
     return dt;
   }
-  
+
   public set year (year) {}
   public set month (month) {}
   public set day (day) {}
@@ -288,7 +288,8 @@ export class Ng2DatetimePickerComponent implements AfterViewInit {
     this.selectedDate = date || this.defaultValue || new Date();
     this.hour         = this.selectedDate.getHours();
     this.minute       = this.selectedDate.getMinutes();
-    this.monthData    = this.ng2Datetime.getMonthData(this.year, this.month);
+    this.monthData = this.ng2Datetime.getMonthData(this.year, this.month);
+
   }
 
   public toDate (day:number, month?: number):Date {
@@ -298,6 +299,7 @@ export class Ng2DatetimePickerComponent implements AfterViewInit {
   public toDateOnly (date:Date) {
     return new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0, 0);
   }
+
 
   /**
    * set the selected date and close it when closeOnSelect is true
@@ -318,7 +320,7 @@ export class Ng2DatetimePickerComponent implements AfterViewInit {
    * show prev/next month calendar
    */
   public updateMonthData (num:number) {
-    this.monthData = this.ng2Datetime.getMonthData(this.monthData.year, this.monthData.month + num);
+      this.monthData = this.ng2Datetime.getMonthData(this.monthData.year, this.monthData.month + num);
   }
 
   public isDateDisabled(date: Date) {

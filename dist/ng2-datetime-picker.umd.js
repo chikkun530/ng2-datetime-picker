@@ -153,6 +153,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return new Date(parseInt(tmp[0], 10), parseInt(tmp[1], 10) - 1, parseInt(tmp[2], 10), parseInt(tmp[3] || '0', 10), parseInt(tmp[4] || '0', 10), parseInt(tmp[5] || '0', 10));
 	    };
 	    Ng2Datetime.prototype.getMonthData = function (year, month) {
+	        if ((!month && month !== 0) || !/[1-9]+/.test(month.toString()) || !year) {
+	            var hiduke = new Date();
+	            year = hiduke.getFullYear();
+	            month = hiduke.getMonth();
+	        }
 	        year = month > 11 ? year + 1 :
 	            month < 0 ? year - 1 : year;
 	        month = (month + 12) % 12;

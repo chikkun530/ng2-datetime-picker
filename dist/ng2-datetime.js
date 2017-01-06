@@ -73,6 +73,11 @@ var Ng2Datetime = (function () {
         return new Date(parseInt(tmp[0], 10), parseInt(tmp[1], 10) - 1, parseInt(tmp[2], 10), parseInt(tmp[3] || '0', 10), parseInt(tmp[4] || '0', 10), parseInt(tmp[5] || '0', 10));
     };
     Ng2Datetime.prototype.getMonthData = function (year, month) {
+        if ((!month && month !== 0) || !/[1-9]+/.test(month.toString()) || !year) {
+            var hiduke = new Date();
+            year = hiduke.getFullYear();
+            month = hiduke.getMonth();
+        }
         year = month > 11 ? year + 1 :
             month < 0 ? year - 1 : year;
         month = (month + 12) % 12;
@@ -142,7 +147,7 @@ var Ng2Datetime = (function () {
         { type: core_1.Injectable },
     ];
     /** @nocollapse */
-    Ng2Datetime.ctorParameters = [];
+    Ng2Datetime.ctorParameters = function () { return []; };
     return Ng2Datetime;
 }());
 exports.Ng2Datetime = Ng2Datetime;

@@ -124,6 +124,11 @@ export class Ng2Datetime {
   }
 
   getMonthData(year: number, month: number): any {
+    if ((!month && month !==0) || !/[1-9]+/.test(month.toString()) || !year) {
+      var hiduke=new Date();
+      year = hiduke.getFullYear();
+      month = hiduke.getMonth();
+    }
     year = month > 11 ? year + 1 :
       month < 0 ? year - 1 : year;
     month = (month + 12) % 12;

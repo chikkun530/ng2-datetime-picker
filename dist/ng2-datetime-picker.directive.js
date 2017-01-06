@@ -254,11 +254,11 @@ var Ng2DatetimePickerDirective = (function () {
                 },] },
     ];
     /** @nocollapse */
-    Ng2DatetimePickerDirective.ctorParameters = [
+    Ng2DatetimePickerDirective.ctorParameters = function () { return [
         { type: core_1.ComponentFactoryResolver, },
         { type: core_1.ViewContainerRef, },
         { type: forms_1.ControlContainer, decorators: [{ type: core_1.Optional }, { type: core_1.Host }, { type: core_1.SkipSelf },] },
-    ];
+    ]; };
     Ng2DatetimePickerDirective.propDecorators = {
         'dateFormat': [{ type: core_1.Input, args: ['date-format',] },],
         'dateOnly': [{ type: core_1.Input, args: ['date-only',] },],
