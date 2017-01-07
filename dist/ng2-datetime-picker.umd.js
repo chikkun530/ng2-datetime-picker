@@ -157,6 +157,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var hiduke = new Date();
 	            year = hiduke.getFullYear();
 	            month = hiduke.getMonth();
+	            console.log(year);
+	            console.log(month);
+	            console.log("#######################");
 	        }
 	        year = month > 11 ? year + 1 :
 	            month < 0 ? year - 1 : year;
